@@ -6,7 +6,7 @@
 	"scripts": {
 		"compile": "pushd ./native; wasm-pack build -t nodejs -d ../out",
 		"extract": "mkdir -p ./bin; cp ./out/chacha_poly1305_rust* ./bin",
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "./node_modules/mocha/bin/_mocha ./test",
 		"tsc": "./node_modules/typescript/bin/tsc --build tsconfig.json"
 	},
 	"keywords": [
