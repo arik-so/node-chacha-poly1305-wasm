@@ -1,5 +1,5 @@
 # chacha-poly1305-wasm
-[![Build Status](https://travis-ci.com/arik-so/bolt08.svg?branch=master)](https://travis-ci.com/arik-so/bolt08)
+[![Build Status](https://travis-ci.org/arik-so/node-chacha-poly1305-wasm.svg?branch=master)](https://travis-ci.org/arik-so/node-chacha-poly1305-wasm)
 
 Matt Corallo's Rust implementation of Chacha-Poly1305 from rust-lightning exposed through WASM. 
 
