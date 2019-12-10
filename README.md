@@ -15,10 +15,8 @@ npm run extract
 ## Install
 
 ```shell script
-npm install chacha-poly1305
+npm install chacha-poly1305-wasm
 ```
-
-It should be chacha-poly1305-wasm one day.
 
 ## License
 

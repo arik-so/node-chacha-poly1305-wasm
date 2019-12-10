@@ -1,5 +1,5 @@
 {
-	"name": "chacha-poly1305",
+	"name": "chacha-poly1305-wasm",
 	"version": "0.1.0",
 	"description": "Native Rust compiled to WASM for Chacha Poly1305 exposure in Node",
 	"main": "index.js",
