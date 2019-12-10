@@ -1,0 +1,47 @@
+{
+	"name": "chacha-poly1305-wasm",
+	"version": "0.1.0",
+	"description": "Native Rust compiled to WASM for Chacha Poly1305 exposure in Node",
+	"main": "index.js",
+	"scripts": {
+		"compile": "pushd ./native; wasm-pack build -t nodejs -d ../out",
+		"extract": "mkdir -p ./bin; cp ./out/chacha_poly1305_rust* ./bin",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"tsc": "./node_modules/typescript/bin/tsc --build tsconfig.json"
+	},
+	"keywords": [
+		"chacha",
+		"chacha20",
+		"20",
+		"poly1305",
+		"poly",
+		"1305",
+		"chacha20",
+		"7539",
+		"rfc7539",
+		"rfc",
+		"rust",
+		"wasm"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/arik-so/node-chacha-poly1305-wasm"
+	},
+	"author": {
+		"name": "Arik Sosman",
+		"url": "https://twitter.com/arikaleph"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"debug": "^4.1.1"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.2.5",
+		"@types/debug": "^4.1.5",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.12.11",
+		"chai": "^4.2.0",
+		"mocha": "^6.2.2",
+		"typescript": "^3.7.2"
+	}
+}
