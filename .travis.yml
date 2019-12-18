@@ -10,3 +10,5 @@ matrix:
       node_js:
         - '10'
         - '12'
+      before_script:
+        - make setup compile
