@@ -12,7 +12,7 @@ matrix:
         - '10'
         - '12'
       before_script:
-        - nom run tsc
+        - npm run tsc
       cache:
        - cargo
        - npm
