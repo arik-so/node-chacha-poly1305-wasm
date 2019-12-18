@@ -1,10 +1,10 @@
 matrix:
   include:
     - language: rust
-      before_script:
-        - cd native
-      script:
-        - wasm-pack build -t nodejs -d ../out
+      cache:
+        - cargo
+        - npm
+      script: cargo install wasm-pack & wasm-pack build -t nodejs -d "../bin" "./native"
 
     - language: node_js
       node_js:
@@ -12,3 +12,6 @@ matrix:
         - '12'
       before_script:
         - make setup compile
+      cache:
+       - cargo
+       - npm
