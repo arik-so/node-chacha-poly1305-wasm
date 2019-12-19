@@ -1,13 +1,18 @@
 matrix:
   include:
+    - env:
+        - TRAVIS_NODE_VERSION="0.12"
+        - TRAVIS_NODE_VERSION="4"
     - language: rust
       cache:
         - cargo
         - npm
         - $TRAVIS_BUILD_DIR/bin
-#      before_script: HAS_WASM_PACK = $(shell which wasm-pack); if [ -z "$(HAS_WASM_PACK)" ]; then cargo install wasm-pack; fi;
+      #      before_script: HAS_WASM_PACK = $(shell which wasm-pack); if [ -z "$(HAS_WASM_PACK)" ]; then cargo install wasm-pack; fi;
       before_script: make cargo
-      script:  wasm-pack build -t nodejs -d "../bin" "./native"
+      before_install:
+        - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION;
+      script: wasm-pack build -t nodejs -d "../bin" "./native" && npm run tsc && npm test
 
     - language: node_js
       node_js:
@@ -16,6 +21,6 @@ matrix:
       before_script:
         - npm run tsc
       cache:
-       - cargo
-       - npm
-       - $TRAVIS_BUILD_DIR/bin
+        - cargo
+        - npm
+        - $TRAVIS_BUILD_DIR/bin
