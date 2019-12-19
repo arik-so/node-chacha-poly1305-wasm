@@ -2,7 +2,7 @@ CURRENT_DIR = $(shell pwd)
 HAS_WASM_PACK = $(shell which wasm-pack)
 
 cargo:
-	if [ -z "$(HAS_WASM_PACK)" ]; then echo "hello world!"; fi;
+	if [ -z "$(HAS_WASM_PACK)" ]; then cargo install wasm-pack; fi;
 
 verify:
 	if [ -z "$(HAS_WASM_PACK)" ]; then echo "hello world!"; fi;

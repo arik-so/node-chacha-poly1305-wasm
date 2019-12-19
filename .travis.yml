@@ -4,6 +4,7 @@ matrix:
       cache:
         - cargo
         - npm
+        - $TRAVIS_BUILD_DIR/bin
 #      before_script: HAS_WASM_PACK = $(shell which wasm-pack); if [ -z "$(HAS_WASM_PACK)" ]; then cargo install wasm-pack; fi;
       before_script: make cargo
       script:  wasm-pack build -t nodejs -d "../bin" "./native"
@@ -17,3 +18,4 @@ matrix:
       cache:
        - cargo
        - npm
+       - $TRAVIS_BUILD_DIR/bin
