@@ -1,6 +1,9 @@
 CURRENT_DIR = $(shell pwd)
 HAS_WASM_PACK = $(shell which wasm-pack)
 
+cargo:
+	if [ -z "$(HAS_WASM_PACK)" ]; then echo "hello world!"; fi;
+
 verify:
 	if [ -z "$(HAS_WASM_PACK)" ]; then echo "hello world!"; fi;
 	echo "finito!"
