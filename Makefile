@@ -1,8 +1,9 @@
 CURRENT_DIR = $(shell pwd)
 HAS_WASM_PACK = $(shell which wasm-pack)
 
-cargo:
-	if [ -z "$(HAS_WASM_PACK)" ]; then cargo install wasm-pack; fi;
+travis:
+	if [ -z "$(HAS_WASM_PACK)" ]; then cargo install wasm-pack; fi
+	nvm install 12 && nvm use 12
 
 verify:
 	if [ -z "$(HAS_WASM_PACK)" ]; then echo "Verified: WASM is installed!"; fi;
