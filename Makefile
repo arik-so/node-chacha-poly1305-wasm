@@ -3,10 +3,9 @@ HAS_WASM_PACK = $(shell which wasm-pack)
 
 travis:
 	if [ -z "$(HAS_WASM_PACK)" ]; then cargo install wasm-pack; fi
-	nvm install 12 && nvm use 12
 
 verify:
-	if [ -z "$(HAS_WASM_PACK)" ]; then echo "Verified: WASM is installed!"; fi;
+	if [ -z "$(HAS_WASM_PACK)" ]; then echo "Verified: WASM is installed!"; fi
 	echo "finito!"
 
 setup:
