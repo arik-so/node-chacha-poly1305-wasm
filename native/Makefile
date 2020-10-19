@@ -12,3 +12,6 @@ wasm-to-asm:
 
 asmify:
 	~/Developer/binaryen/bin/wasm2js ./bin/chacha_poly1305_rust_bg.wasm
+
+test-node:
+	node ./wasm-test/node_test.js
