@@ -8,19 +8,25 @@
 
 	Hello
 
-<!--<script type="module" src="./chacha_poly1305_rust.js"></script>-->
-<script type="module" src="./chacha_poly1305_rust.js"></script>
-<!--<script type="module" src="./asm.js"></script>-->
+<!--<script type="module" src="../bin/chacha_poly1305_rust.js"></script>-->
+<!--<script src="../bin/chacha_poly1305_rust.js"></script>-->
+<!--<script type="module" src="../bin/asm.js"></script>-->
 
-<script type="application/javascript">
+<script type="module">
 
 	// const callback = (a, b) => {
 	// 	return a + b;
 	// }
 
-	// const result = call_callback(callback);
-	const result = perform_complicated_calculation();
-	console.log(result);
+	import init, {perform_complicated_calculation} from '../bin/chacha_poly1305_rust.js';
+
+	async function run() {
+		await init();
+		console.log(perform_complicated_calculation());
+	}
+
+	run();
+	console.log(perform_complicated_calculation);
 
 </script>
 
