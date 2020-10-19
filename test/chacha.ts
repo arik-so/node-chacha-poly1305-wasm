@@ -1,9 +1,20 @@
 import Chacha from '../src/chacha';
 import chai = require('chai');
 
+import * as wasmTest from '../bin/chacha_poly1305_rust';
+
 const assert = chai.assert;
 
 describe('Chacha Poly1305 Test', () => {
+	it('should be an experiment', () => {
+
+		const b = wasmTest;
+		const buffer = Buffer.from([1, 2, 3, 4]);
+		const newBuffer = wasmTest.eat_buffer(buffer);
+		console.log('here');
+
+	});
+
 	it('should encrypt some data', () => {
 		const key = Buffer.from('908b166535c01a935cf1e130a5fe895ab4e6f3ef8855d87e9b7581c4ab663ddc', 'hex');
 		const nonce = Buffer.from('000000000100000000000000', 'hex');
