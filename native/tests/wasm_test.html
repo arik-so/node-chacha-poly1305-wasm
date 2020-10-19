@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web WASM Test</title>
+</head>
+<body>
+
+	Hello
+
+<script type="application/javascript" src="../bin/chacha_poly1305_rust.js"></script>
+
+<script type="application/javascript">
+
+	const callback = (a, b) => {
+		return a + b;
+	}
+
+	const result = call_callback(callback);
+	console.log(result);
+
+</script>
+
+</body>
+</html>
