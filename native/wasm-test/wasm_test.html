@@ -18,7 +18,7 @@
 	// 	return a + b;
 	// }
 
-	import init, {perform_complicated_calculation} from '../bin/chacha_poly1305_rust.js';
+	/*import init, {perform_complicated_calculation} from '../bin/chacha_poly1305_rust.js';
 
 	async function run() {
 		await init();
@@ -26,11 +26,13 @@
 	}
 
 	run();
-	console.log(perform_complicated_calculation);
+	console.log(perform_complicated_calculation);*/
 
 
 	// import {perform_complicated_calculation} from '../bin/asm.js';
-	// console.log(perform_complicated_calculation());
+	import {perform_complicated_calculation, create_init_message} from '../bin/asm.js';
+	console.log(perform_complicated_calculation());
+	console.log(create_init_message());
 
 </script>
 
