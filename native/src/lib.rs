@@ -16,10 +16,10 @@ extern crate web_sys;
 // use js_sys::*;
 
 // extern crate bitcoin;
-/*extern crate lightning;
+extern crate lightning;
 use lightning::ln::msgs::Init;
 use lightning::ln::features::InitFeatures;
-use lightning::util::ser::Writeable;*/
+use lightning::util::ser::Writeable;
 
 
 
@@ -53,7 +53,7 @@ pub fn eat_buffer(buffer: &[u8]) -> Hello {
 	Hello::Bar
 }
 
-/*#[wasm_bindgen]
+#[wasm_bindgen]
 pub struct WasmBuffer {
 	pub data: *const u8,
 	pub length: usize
@@ -80,7 +80,7 @@ pub fn create_init_message() -> js_sys::Uint8Array {
 	// encoded.as_ptr()
 	// encoded.into_boxed_slice()
 	encoded.as_slice().into()
-}*/
+}
 
 #[wasm_bindgen]
 pub fn call_callback(callback: &js_sys::Function) -> u32 {
